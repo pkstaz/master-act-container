@@ -1,0 +1,13 @@
+- Ejecutar instrucciones en el archivo 01-deploy.sh
+- Si desea poblar la BD debe exponer el puerdo de la BD y conectarse a traves de un cliente de BD, en el caso contrario se puede ejecutar sin exponer y la aplicacion no mostrara datos. 
+- En caso de querer poblar la BD una vez se han ejecutado todas las instrucciones del archivo 01-deploy.sh desde un cliente DB conectarse utilizando el string conecctio jdbc:postgresql://localhost:5432/postgresdb user:postgres / pass: postgres
+  Ejecutar las queys contenidas en los archivos 01-create-table.sql (es posible que aroje un error ya que la aplicacion java recrea la tabla cada vez que se ejecuta) y el archivo 02-insert.sql
+- Para probar la aplicacion ingresar a la siguiente URL en el navegador web, 
+    http://localhost:8081/index
+  Si cuenta con datos en la BD se puede usar el paginado agregando QueryString en la URL 
+    http://localhost:8081/index?pagina=2&filas=5 
+  Donde, filas es la cantidad de registros a mostrar por paginas y pagina es la pagina en la que nos queremos situar. 
+- Ejecutar el siguiente comando para validar que todo esta instalado en nuestra maquina
+    docker ps && docker network list && docker volume ls 
+  Tomar captura de pantalla y enviar como nombre-apellido.jpg al correo c.estay.g@gmail.com  (Esto luego sera enviado junto con la actividad)
+- Para eliminar lo instalado ejecutar las instrucciones del archivo 02-clean.sh
