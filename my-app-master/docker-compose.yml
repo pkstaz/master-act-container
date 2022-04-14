@@ -3,6 +3,7 @@ services:
   postgres:
     image: postgres
     container_name: my-postgres-master
+    restart: always
     ports:
       - "5433:5432"
     networks:
@@ -17,6 +18,7 @@ services:
     build: .
     # image: my-app-master
     container_name: my-app-master
+    restart: always
     ports:
       - "8081:8080"
     networks:
