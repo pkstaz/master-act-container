@@ -1,4 +1,5 @@
-- Ejecutar instrucciones en el archivo 01-deploy.sh
+- Para ejecutar la actividad ejecutar el siguiente comando: sh 01-deploy.sh
+- Para limpiar lo creado en la actividad ejecutar el siguiente comando: sh 04-clean.sh
 - Si desea poblar la BD debe exponer el puerdo de la BD y conectarse a traves de un cliente de BD, en el caso contrario se puede ejecutar sin exponer y la aplicacion no mostrara datos. 
 - En caso de querer poblar la BD una vez se han ejecutado todas las instrucciones del archivo 01-deploy.sh desde un cliente DB conectarse utilizando el string conecctio jdbc:postgresql://localhost:5432/postgresdb user:postgres / pass: postgres
   Ejecutar las queys contenidas en los archivos 01-create-table.sql (es posible que aroje un error ya que la aplicacion java recrea la tabla cada vez que se ejecuta) y el archivo 02-insert.sql
