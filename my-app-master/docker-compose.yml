@@ -4,6 +4,7 @@ services:
     image: postgres
     container_name: my-postgres-master
     restart: always
+    #Comentar las siguientes 2 lineas para no exponer la BD y dejarla privada
     ports:
       - "5433:5432"
     networks:
