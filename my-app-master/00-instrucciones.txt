@@ -9,5 +9,4 @@
   Donde, filas es la cantidad de registros a mostrar por paginas y pagina es la pagina en la que nos queremos situar. 
 - Ejecutar el siguiente comando para validar que todo esta instalado en nuestra maquina
     docker ps && docker network list && docker volume ls 
-  Tomar captura de pantalla y enviar como nombre-apellido.jpg al correo c.estay.g@gmail.com  (Esto luego sera enviado junto con la actividad)
 - Para eliminar lo instalado ejecutar las instrucciones del archivo 02-clean.sh

@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    container_name: my-postgres-master
+    ports:
+      - "5433:5432"
+    networks:
+      - my-net-master
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgresdb
+    volumes: 
+      - my-postgres-master-volume:/var/lib/postgresql/data
+  quarkus:
+    build: .
+    # image: my-app-master
+    container_name: my-app-master
+    ports:
+      - "8081:8080"
+    networks:
+      - my-net-master
+    volumes: 
+      - my-app-master-volume:/data
+volumes:
+  my-postgres-master-volume:
+    driver: local
+  my-app-master-volume:
+    driver: local
+networks:
+  my-net-master:
+      driver: bridge
+      ipam:
+          driver: default
+          config:
+              - subnet: "10.10.10.0/16"
+                gateway: "10.10.10.1"

@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+
+  my-postgres-master:
+    image: postgres
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgresdb
+    volumes:
+      - postgres:/database-data
+
+  my-app-master:
+    image: docker.io/cestay/my-app-master:1.0.0
+    restart: always
+
+volumes:
+  postgres:
